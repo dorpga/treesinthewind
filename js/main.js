@@ -1,14 +1,20 @@
 jQuery(function($, undefined) {
+    var x = 0;
+    var y = 0;
     $('#tty').terminal(function(command, term) {
         var cmd = command.split(' ');
         switch (cmd[0]) {
             case "n":
+                y++;
                 break;
             case "s":
+                y--
                 break;
             case "e":
+                x++;
                 break;
             case "w":
+                x--;
                 break;
             case "getxy":
                 term.echo("X: " + x);
