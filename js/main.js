@@ -1,7 +1,22 @@
 jQuery(function($, undefined) {
+    var map = {
+        "0,0": {
+            name: "Porch",
+            desc: "You are standing on a porch",
+            directions: {
+                north: true,
+            }
+        }
+    }
+    
     var x = 0;
     var y = 0;
+    var curmap;
+    
     $('#tty').terminal(function(command, term) {
+        curmap = map[x + "," + y];
+        term.echo(curmap.name);
+        term.echo(curmap.desc);
         var cmd = command.split(' ');
         switch (cmd[0]) {
             case "n":
