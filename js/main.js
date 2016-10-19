@@ -49,7 +49,7 @@ jQuery(function($, undefined) {
                 break;
         }
     }, {
-        greetings: 'Trees in the wind\nVersion 0.2\nCopyright 2016 Carver Harrison\nPress enter to start',
+        greetings: 'Trees in the wind\nVersion 0.2\nCopyright 2016 Carver Harrison',
         name: 'tty',
         height: 720,
         prompt: curmap.name + ": "
