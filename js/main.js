@@ -21,9 +21,6 @@ jQuery(function($, undefined) {
     var curmap;
     
     $('#tty').terminal(function(command, term) {
-        curmap = map[x + "," + y];
-        term.echo(curmap.name);
-        term.echo(curmap.desc);
         var cmd = command.split(' ');
         switch (cmd[0]) {
             case "n":
@@ -47,6 +44,9 @@ jQuery(function($, undefined) {
                 term.echo("Y: " + y);
                 break;
         }
+        curmap = map[x + "," + y];
+        term.echo(curmap.name);
+        term.echo(curmap.desc);
     }, {
         greetings: 'Trees in the wind\nCopyright 2016 Carver Harrison\nPress enter to start',
         name: 'tty',
