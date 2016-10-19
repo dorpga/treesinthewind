@@ -30,19 +30,19 @@ jQuery(function($, undefined) {
         var cmd = command.split(' ');
         switch (cmd[0]) {
             case "n":
-                if (curmap.directions.north) y++; pri();
+                if (curmap.directions.north) { y++; pri(); }
                 else term.echo("You can't go that way!");
                 break;
             case "s":
-                if (curmap.directions.south) y--; pri();
+                if (curmap.directions.south) { y--; pri(); }
                 else term.echo("You can't go that way!");
                 break;
             case "e":
-                if (curmap.directions.east) x++; pri();
+                if (curmap.directions.east) { x++; pri(); }
                 else term.echo("You can't go that way!");
                 break;
             case "w":
-                if (curmap.directions.west) x--; pri();
+                if (curmap.directions.west) { x--; pri(); }
                 else term.echo("You can't go that way!");
                 break;
             case "getxy":
