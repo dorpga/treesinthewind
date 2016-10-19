@@ -22,7 +22,7 @@ jQuery(function($, undefined) {
     
     $('#tty').terminal(function(command, term) {
         curmap = map[x + "," + y];
-        term.prompt =  curmap.name + ": ";
+        $('#tty').terminal().prompt =  curmap.name + ": ";
         var cmd = command.split(' ');
         switch (cmd[0]) {
             case "n":
