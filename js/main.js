@@ -7,6 +7,13 @@ jQuery(function($, undefined) {
                 north: true,
             }
         }
+        "0,1": {
+            name: "Mud Room",
+            desc: "You are standing in the mud room",
+            directions: {
+                south: true,
+            }
+        }
     }
     
     var x = 0;
