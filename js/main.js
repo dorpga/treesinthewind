@@ -20,30 +20,28 @@ jQuery(function($, undefined) {
     var y = 0;
     var curmap;
     
-    function pri() {
-        curmap = map[x + "," + y];
-        term.echo(curmap.name);
-        term.echo(curmap.desc);
-    }
-    
     $('#tty').terminal(function(command, term) {
+        curmap = map[x + "," + y];
         var cmd = command.split(' ');
         switch (cmd[0]) {
             case "n":
-                if (curmap.directions.north) { y++; pri(); }
+                if (curmap.directions.north) y++
                 else term.echo("You can't go that way!");
                 break;
             case "s":
-                if (curmap.directions.south) { y--; pri(); }
+                if (curmap.directions.south) y--;
                 else term.echo("You can't go that way!");
                 break;
             case "e":
-                if (curmap.directions.east) { x++; pri(); }
+                if (curmap.directions.east) x++;
                 else term.echo("You can't go that way!");
                 break;
             case "w":
-                if (curmap.directions.west) { x--; pri(); }
+                if (curmap.directions.west) x--;
                 else term.echo("You can't go that way!");
+                break;
+            case "look":
+                term.echo(curmap.desc);
                 break;
             case "getxy":
                 term.echo("X: " + x);
@@ -54,6 +52,6 @@ jQuery(function($, undefined) {
         greetings: 'Trees in the wind\nCopyright 2016 Carver Harrison\nPress enter to start',
         name: 'tty',
         height: 720,
-        prompt: '? '
+        prompt: curmap.name + ": "
     });
 });
