@@ -22,7 +22,7 @@ jQuery(function($, undefined) {
     
     $('#tty').terminal(function(command, term) {
         curmap = map[x + "," + y];
-        $('#tty').terminal().prompt =  curmap.name + ": ";
+        term.set_prompt(curmap.name + ": ");
         var cmd = command.split(' ');
         switch (cmd[0]) {
             case "n":
@@ -53,6 +53,6 @@ jQuery(function($, undefined) {
         greetings: 'Trees in the wind\nVersion 0.2\nCopyright 2016 Carver Harrison',
         name: 'tty',
         height: 720,
-        prompt: curmap.name + ": "
+        prompt: ": "
     });
 });
