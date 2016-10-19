@@ -48,9 +48,9 @@ jQuery(function($, undefined) {
                 term.echo("X: " + x);
                 term.echo("Y: " + y);
                 break;
-            curmap = map[x + "," + y];
-            $('#tty').terminal().set_prompt(term.set_prompt(curmap.name + ": "));
         }
+        curmap = map[x + "," + y];
+        $('#tty').terminal().set_prompt(term.set_prompt(curmap.name + ": "));
     }, {
         greetings: 'Trees in the wind\nVersion 0.2\nCopyright 2016 Carver Harrison',
         name: 'tty',
