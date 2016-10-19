@@ -18,14 +18,14 @@ jQuery(function($, undefined) {
     
     var x = 0;
     var y = 0;
-    var curmap;
+    var curmap = map[x + "," + y];
     
     $('#tty').terminal(function(command, term) {
         curmap = map[x + "," + y];
         var cmd = command.split(' ');
         switch (cmd[0]) {
             case "n":
-                if (curmap.directions.north) y++
+                if (curmap.directions.north) y++;
                 else term.echo("You can't go that way!");
                 break;
             case "s":
@@ -49,7 +49,7 @@ jQuery(function($, undefined) {
                 break;
         }
     }, {
-        greetings: 'Trees in the wind\nCopyright 2016 Carver Harrison\nPress enter to start',
+        greetings: 'Trees in the wind\nVersion 0.2\nCopyright 2016 Carver Harrison\nPress enter to start',
         name: 'tty',
         height: 720,
         prompt: curmap.name + ": "
