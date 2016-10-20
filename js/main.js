@@ -50,7 +50,7 @@ jQuery(function($, undefined) {
             case "take":
                 var it = cmd[1];
                 if (curmap.items.includes(it)) {
-                   items.append(it);
+                   items.push(it);
                    term.echo("Picked up " + it);
                 } else {
                     term.echo("Couldn't find " + it);
