@@ -33,7 +33,7 @@ jQuery(function($, undefined) {
     var x = 0;
     var y = 0;
     var curmap = map[x + "," + y];
-    var items = [];
+    var items = [""];
     
     $('#tty').terminal(function(command, term) {
         curmap = map[x + "," + y];
