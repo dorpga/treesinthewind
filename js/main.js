@@ -63,7 +63,7 @@ jQuery(function($, undefined) {
             case "":
                 break;
             default:
-                term.echo("I don't know to do that!");
+                term.echo("You don't know to do that!");
                 break;
         }
         curmap = map[x + "," + y];
