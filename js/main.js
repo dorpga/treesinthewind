@@ -60,8 +60,10 @@ jQuery(function($, undefined) {
                 term.echo("X: " + x);
                 term.echo("Y: " + y);
                 break;
+            case "":
+                break;
             default:
-                term.echo("What?");
+                term.echo("I don't know to do that!");
                 break;
         }
         curmap = map[x + "," + y];
