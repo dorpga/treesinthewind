@@ -14,7 +14,7 @@ jQuery(function($, undefined) {
             directions: {
                 south: true,
             },
-            items: ["key"];
+            items: ["key"]
         }
     }
     
