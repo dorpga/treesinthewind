@@ -5,20 +5,23 @@ jQuery(function($, undefined) {
             desc: "You are standing on a porch",
             directions: {
                 north: true,
-            }
+            },
+            items: []
         },
         "0,1": {
             name: "Mud Room",
-            desc: "You are standing in the mud room",
+            desc: "You are standing in the mud room, you see a key.",
             directions: {
                 south: true,
-            }
+            },
+            items: ["key"];
         }
     }
     
     var x = 0;
     var y = 0;
     var curmap = map[x + "," + y];
+    var items = [];
     
     $('#tty').terminal(function(command, term) {
         curmap = map[x + "," + y];
@@ -43,6 +46,14 @@ jQuery(function($, undefined) {
                 break;
             case "look":
                 term.echo(curmap.desc);
+                break;
+            case "take":
+                var it = cmd[1];
+                if (curmap.items.contains(it))
+                   items.append(it);
+                   term.echo("Picked up " + it);
+                else
+                    term.echo("Couldn't find " + it);
                 break;
             case "getxy":
                 term.echo("X: " + x);
