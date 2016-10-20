@@ -49,7 +49,7 @@ jQuery(function($, undefined) {
                 break;
             case "take":
                 var it = cmd[1];
-                if (curmap.items.contains(it)) {
+                if (curmap.items.includes(it)) {
                    items.append(it);
                    term.echo("Picked up " + it);
                 } else {
