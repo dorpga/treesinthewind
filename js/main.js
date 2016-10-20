@@ -2,18 +2,30 @@ jQuery(function($, undefined) {
     var map = {
         "0,0": {
             name: "Porch",
-            desc: "You are standing on a porch",
+            desc: "You are standing on a porch.",
             directions: {
                 north: true,
             },
+            item: "",
             items: []
         },
         "0,1": {
             name: "Mud Room",
             desc: "You are standing in the mud room, you see a key.",
             directions: {
+                north: true,
                 south: true,
             },
+            item: "",
+            items: ["key"]
+        },
+        "0,2": {
+            name: "Bedroom",
+            desc: "You are standing in a bedroom.",
+            directions: {
+                south: true,
+            },
+            item: "key",
             items: ["key"]
         }
     }
@@ -29,19 +41,19 @@ jQuery(function($, undefined) {
         var cmd = command.split(' ');
         switch (cmd[0]) {
             case "n":
-                if (curmap.directions.north) y++;
+                if (curmap.directions.north == true && items.includes(curmap.item)) y++;
                 else term.echo("You can't go that way!");
                 break;
             case "s":
-                if (curmap.directions.south) y--;
+                if (curmap.directions.south == true && items.includes(curmap.item)) y--;
                 else term.echo("You can't go that way!");
                 break;
             case "e":
-                if (curmap.directions.east) x++;
+                if (curmap.directions.east == true && items.includes(curmap.item)) x++;
                 else term.echo("You can't go that way!");
                 break;
             case "w":
-                if (curmap.directions.west) x--;
+                if (curmap.directions.west == true && items.includes(curmap.item)) x--;
                 else term.echo("You can't go that way!");
                 break;
             case "look":
@@ -63,7 +75,7 @@ jQuery(function($, undefined) {
             case "":
                 break;
             default:
-                term.echo("You don't know to do that!");
+                term.echo("You don't know to do that");
                 break;
         }
         curmap = map[x + "," + y];
