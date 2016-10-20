@@ -49,11 +49,12 @@ jQuery(function($, undefined) {
                 break;
             case "take":
                 var it = cmd[1];
-                if (curmap.items.contains(it))
+                if (curmap.items.contains(it)) {
                    items.append(it);
                    term.echo("Picked up " + it);
-                else
+                } else {
                     term.echo("Couldn't find " + it);
+                }
                 break;
             case "getxy":
                 term.echo("X: " + x);
