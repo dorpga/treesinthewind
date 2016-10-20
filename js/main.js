@@ -59,6 +59,9 @@ jQuery(function($, undefined) {
                 term.echo("X: " + x);
                 term.echo("Y: " + y);
                 break;
+            default:
+                term.echo("What?");
+                break;
         }
         curmap = map[x + "," + y];
         $('#tty').terminal().set_prompt(curmap.name + ": ");
